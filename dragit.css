@@ -1,0 +1,70 @@
+body{
+	background: #1796B5;
+}
+img{
+	width: 80px;
+	height: 80px;
+	z-index: 2;
+}
+#draggable-container{
+	background: #fff;
+	width: 95%;
+	height: 900px;
+	margin: 30px;
+	padding: 0;
+}
+#goal{
+	position: absolute;
+	top: 170px;
+	left: 1400px;
+	width: 200px;
+	height: 350px;
+	z-index: 1;
+	border-top: 5px solid #444;
+	border-right: 5px solid #444;
+	border-bottom: 5px solid #444;
+}
+#score{
+	display: none;
+	position: absolute;
+	top: 40px;
+	left: 800px;
+	font: bold 50px Arial;
+	color: blue;
+}
+#score.show{
+	display: block;
+}
+
+.chris{
+	width: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*animation: moveAcross 10s linear infinite;*/
+}
+
+/*in this example the object that I want to animate is an image with a class of .cycle
+You have to define :the name of the animation (which is below and we have choosen it)
+the duration of the animation(how long this will take, */
+.cycle{
+    position: relative;
+	top:20px;
+	left:20px;
+	-webkit-animation-name:ride;
+	-webkit-animation-duration:2s;
+/*  these 2 properties have a default value if you do not asign one  */
+	-webkit-animation-timing-function:ease-in;
+/*  these 2 properties have a default value if you do not asign one  , this will repeat the animation once */
+	-webkit-animation-iteration-count:1;
+	}
+/* the keyframes define what will change in our animation
+ we animate it from{} 0 -we change nothing to{} 400px on the X axis
+ Using translate instead of top and left in our animations means there's less chance
+ we'll accidentally override existing styles.
+ */
+@-webkit-keyframes ride{
+/* move on the x axis  */    
+    from{-webkit-transform:translateX(0px);}
+	to{-webkit-transform:translateX(400px);}
+}
